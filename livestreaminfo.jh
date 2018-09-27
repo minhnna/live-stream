@@ -1,15 +1,18 @@
 entity LiveStreamInfo {
-	video_id String
+	videoId String,
+    aiResult  String,
+    result String
 }
 
+enum RESULT {
+    OK, NG, NC, ERROR
+}
+
+// Set pagination options
+// paginate Card with infinite-scroll
 paginate LiveStreamInfo with pagination
 
-// Use Data Transfert Objects (DTO)
-// dto * with mapstruct
 dto * with mapstruct
 
 // Set service options to all except few
 service all with serviceImpl
-
-// Set an angular suffix
-// angularSuffix * with mySuffix
